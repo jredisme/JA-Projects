@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- !DOCTYPE html tells browser this is using HTML5 -->
+<!-- EXAMPLE CODE HEADER/DISCLAIMER
+ 
+Project:  Project5-Personal Web Site - Visitor Form Validation - Refactor JS
+Name: Jared Acosta
+Submitted: 11/29/23
+ 
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student, 
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that if I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+--CHANGES--
+Added log visit section with associated inputs and labels
+Added log visit link
+Added script defer attribute for js files
+
+--SELF GRADE--
+REFACTOR CSS/HTML/JS: A
+VALIDATION LIBRARY: A
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Reviewer Home</title>
+    <link href="CSS/main.css" rel="stylesheet" id="theme">
+    <script defer src="js/validation.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+<body> 
+    <header>
+        <img src="IMG/logo.png" alt="Site Logo" id="site-logo">
+        <h1>Review: Resident Evil Remakes</h1>
+    </header>
+    <main>
+        <section id="home">
+            <figure>
+                <img src="IMG/homepage_rain.jpg" alt="homepage-rain" id="content-image">
+                <figcaption>Leon and Claire in the rain</figcaption>
+            </figure>
+            <article>
+                <h2> About</h2>
+                <p>
+                    The horror genre in video games has always been a bit niche. 
+                    That said, throughout the years some heavy-hitters have made it to the mainstream. 
+                    One of those heavy-hitters, and maybe the biggest franchise in the genre, is Resident Evil.
+                    The Resident Evil games were groundbreaking for their time. 
+                    The franchise has seen a resurgence thanks to some recent remakes.
+                    Other franchises may also follow suit (i.e. Dead Space). 
+                    This is a website for fans of horror games, and focuses on the Resident Evil game modern remakes. 
+                    "Modern" as in Remakes 2, 3 and 4. 
+                    This website will review each of those games.
+                </p>
+                <h2>Ranking System</h2>
+                <p>
+                    The three games will be ranked based on gameplay, story, and replay value. 
+                    These are broad categories, and ranking is fairly arbitrary. 
+                    It's just based on my recent experiences with each game. 
+                    These rankings could change with additional subsequent replays.
+                    Note that each game is also given an overall score as well. 
+                    I have never played the original Resident Evil games.
+                    I got into these games with more recent titles, like Resident Evil 7. 
+                    So, my gameplay experiences are based on newer Resident Evil/other horror games. 
+                </p>
+                <h2>Closing Remarks</h2>
+                <p>
+                    Not everyone will agree with these reviews. That's what makes life interesting! 
+                    This is my first reviewer website. 
+                </p>
+            </article>
+        </section>
+        <section id="re2">
+            <article>
+                <img src="IMG/RE2 Mr. X.jpg" alt="Mr. X" id="content-image">
+                <h3>"Hope I don't have to write a report on this..." - Leon Kennedy</h3>
+                <h2>Gameplay</h2>
+                <p>
+                    This game so so fun. It utilizes a great weapon upgrade system that rewards exploration. 
+                    The player must weigh the pros of exploration against the cons of running into more zombies (or worse).
+                    The environments complimented the gameplay extremely well.
+                    My only complaint is the interaction with "SPOILER" Mr. X. 
+                    The first few interactions are fun, but it gets old after awhile. 
+                    I give the gameplay for this one an 8/10.
+                </p>
+                <h2>Story</h2>
+                    <p>
+                        The story is perfect for this type of game. 
+                        It borders on cheesy at times, which isn't a bad thing for action horror. 
+                        However, the suspense and mystery work well, and 
+                        it takes an appropriate amount of time to learn about the zombies. 
+                        The final act is also great. 
+                        I give the story for this one a 10/10. 
+                    </p>
+                    <h2>Replay Value</h2>
+                    <p>
+                        The replay value is there. There are 2 characters to play through. 
+                        Although the unique sections are fun, there are a lot of repeat sections. 
+                        I give this one a 7/10 for replay. 
+                    </p>
+                    <h2>Overall Score: 8/10</h2>
+                    <iframe src="https://www.youtube.com/embed/2CenaMdSVRA"></iframe>
+            </article>
+        </section>
+        <section id="re3">
+            <article>
+                <img src="IMG/RE3 Nemesis.jpg" alt="Nemesis" id="content-image">
+                <h3>"I don't mind a little detective work." - Jill Valentine</h3>
+                <h2>Gameplay</h2>
+                <p>
+                    In my opinion, the gameplay in Resident Evil 3 is a slight upgrade to the gameplay in its predecessor.
+                    The reward systems and gunplay are similar to RE2 Remake, but this time, there is also a dodge ability.
+                    The dodge is a simple addition, but it comes in handy and makes movement feel better. 
+                    I give this one a 9/10. 
+                </p>
+                <h2>Story</h2>
+                <p>
+                    The story is a little weaker in this one, mainly because the campaign is shorter. 
+                    The mysteries are also less compelling. That said, the characters are great.
+                    It's still a good time. 
+                    I give this one a 9/10. 
+                </p>
+                <h2>Replay Value</h2>
+                <p>
+                    The replay value is about the same as Resident Evil 2 for me. 
+                    Although there is only 1 ending, the campaign is short, so replays are easier.
+                    I give this one a 8/10.
+                </p>
+                <h2>Overall Score: 9/10</h2>
+                <iframe src="https://www.youtube.com/embed/fYP9pAWLGco"></iframe>
+            </article>
+        </section>
+        <section id="re4">
+            <article>
+                <img src="IMG/RE4 Leon.jpg" alt="Leon" id="content-image">
+                <h3>"Man, that stinks." - Leon Kennedy</h3>
+                <h2>Gameplay</h2>
+                <p>
+                    The Resident Evil 4 remake has the best gameplay. It's more action-oriented than horror, though the horror is there. 
+                    However, the guns and fights just feel right. It all comes together for an amazing experience.
+                    I give this one a 10/10. 
+                </p>
+                <h2>Story</h2>
+                <p>
+                    This story is also great. 
+                    It's a little convoluted, but interesting and entertaining throughout. 
+                    I give this one a 10/10.
+                </p>
+                <h2>Replay Value</h2>
+                <p>
+                    The replay value is high, because the first playthough value is high. 
+                    It's a lot of fun to revist this game, even if there is only 1 ending. 
+                    I give this one a 9/10. 
+                </p>
+                <h2>Overall Score: 10/10</h2>
+                <iframe src="https://www.youtube.com/embed/2zcACo62avY"></iframe>
+            </article>
+        </section>
+        <section id="contact">
+            <article>
+                <h2>Contact Info</h2>
+                <p>
+                All of my fans can contact me at my phone number or email address.
+                They know who they are. 
+                </p>
+            </article>
+        </section>
+        <section id="log-visit">
+            <h2>Visitor Form</h2>
+            <div id="success" class="successMsg">
+                Thank you for logging your visit!
+            </div>
+            <form id="visitor-form" novalidate method="GET" action="https://wp.zybooks.com/form-viewer.php">
+                <div>
+                    <label for="first-name">First Name</label>
+                    <input type="text" class="inputText" id="first-name" name="first-name" placeholder="First Name">
+                    <div class="errorMsg"></div>
+                </div>
+                <div>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" class="inputText" id="last-name" name="last-name" placeholder="Last Name">
+                    <div class="errorMsg"></div>
+                </div>   
+                <div>
+                    <label for="address">Address</label>
+                    <input type="text" class="inputText" id="address" name="address" placeholder="Address">
+                    <div class="errorMsg"></div>
+                </div>
+                <div>
+                    <label for="city">City</label>
+                    <input type="text" class="inputText" id="city" name="city" placeholder="City">
+                    <div class="errorMsg"></div>
+                </div>
+                <div>
+                    <label for="state">State</label>
+                    <input type="text" class="inputText" id="state" name="state" placeholder="State">
+                    <div class="errorMsg"></div>
+                </div>
+                <div>
+                    <label for="zip">Zip Code</label>
+                    <input type="text" class="inputText" id="zip" name="zip" placeholder="Zip Code">
+                    <div class="errorMsg"></div>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text"class="inputText" id="email" name="email" placeholder="Email">
+                    <div class="errorMsg"></div>
+                </div>
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input type="text" class="inputText" id="phone" placeholder="Phone Number">
+                    <div class="errorMsg"></div>
+                </div>
+                <h3>How did you find my page?</h3>
+                <div>
+                    <input type="checkbox" id='google' name='google-box' value="google">
+                    <label for="google">Google Search</label>
+                    <div class="errorMsg"></div>
+                </div>
+                <div>
+                    <input type="checkbox" id='newspaper' name='newspaper-box' value="newspaper">
+                    <label for="newspaper">Newspaper</label>
+                    <div class="errorMsg"></div>
+                </div>
+                <div>
+                    <input type="checkbox" id='friend' name='friend-box' value="friend">
+                    <label for="friend">Friend</label>
+                    <div class="errorMsg"></div>
+                </div>
+                <div>
+                    <button type="submit" id="submit">Send</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <nav>
+        <a href="#home" onclick="showSection('home')" class="home-link">Home</a>
+        <a href="#re2" onclick="showSection('re2')">RE2</a>
+        <a href="#re3" onclick="showSection('re3')">RE3</a>
+        <a href="#re4" onclick="showSection('re4')">RE4</a>
+        <a href="#contact" onclick="showSection('contact')">Contact</a>
+        <a href="#log-visit" onclick="showSection('log-visit')">Visitor Form</a>
+    </nav>
+    <footer>
+        <button id="toggle" onclick="toggleTheme()">
+            Toggle Theme
+        </button>
+        <p>
+            Resident Reviewer by Jared Acosta
+        </p>
+    </footer>
+
+</body>
+
+
+</html>
+

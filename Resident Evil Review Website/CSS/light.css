@@ -1,0 +1,307 @@
+/*
+I declare that the following source code was written by me, or provided
+by the instructor for this project. I understand that copying source
+code from any other source, providing source code to another student, 
+or leaving my code on a public web site constitutes cheating.
+I acknowledge that if I am found in violation of this policy this may result
+in a zero grade, a permanent record on file and possibly immediate failure of the class.
+
+--CHANGES--
+Added font color and family to h2
+Added log-visit to main content ids
+Added submit button
+Added form
+Added input, text type
+Added error message font color
+Added success message
+Added various input validation color and display changes
+*/
+
+
+/*
+"Light Theme"
+*/
+
+/* body
+      Display: Grid
+      Main in large column
+      Nav in small column
+*/
+body {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 90% 10%;
+    grid-auto-rows: auto;
+    grid-template-areas:
+        "header header"
+        "main nav"
+        "footer footer";
+    background-color: lavender;
+}
+
+/* media query
+      Changes layout for smaller screens
+      Moves nav bar to an upper row
+*/
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "main main"
+        "footer footer";
+    }
+    body nav {
+        flex-direction: row;
+    }
+}
+
+/*
+Oswald font for articles
+*/
+@font-face {
+    font-family: "Oswald";
+    src: url("Fonts/Oswald-VariableFont_wght.ttf") format ("truetype");
+}
+
+/*
+site-logo Id
+   Max-width keeps image at reasonable size
+   Margin gives a little separation between logo and header
+*/
+#site-logo {
+    max-width: 10%;
+    height: auto;
+    margin-right: 1%;
+}
+
+/*
+header
+   Display: flex
+      Flex items: logo and header
+*/
+header {
+    grid-area: header;
+    display: flex;
+    background: linear-gradient(to left, blue, white);
+    color: black;
+    padding: 10px;
+}
+
+/*
+nav
+   Display: flex
+      Flex items: 5 links, to website content
+*/
+nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom left, purple, blue);
+    border: 1px solid purple;
+    padding: 10px;
+    font-size: 150%;
+    color: white;
+    gap: 7%;
+}
+
+/*
+main
+   Display: flex
+      Flex items: (Variable but typically) img, article, iframe
+*/
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top, rgb(134, 134, 219), lavender);
+    padding: 10px;
+    border: 1px solid purple;
+}
+
+/*
+article
+*/
+article {
+    text-align: left;
+    padding: 2px;
+    font-size: 100%;
+    font-family: "Oswald", Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+}
+
+/*
+footer 
+*/
+footer {
+    grid-area: footer;
+    display: flex;
+    background-color: lavender;
+    color: black;
+    padding: 10px;
+}
+
+/*
+h1
+*/
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 300%;
+}
+
+/*
+h2
+*/
+h2 {
+    text-shadow: 2px 2px white;
+    font-family: "Oswald", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*
+a
+*/
+a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+a:hover {
+    color: gray;
+}
+
+/*
+iframe 
+   Keep iframe inside container
+*/
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+figcaption
+*/
+figcaption {
+    color: black;
+}
+
+/*
+content-image Id
+   Keep image inside container
+*/
+#content-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+bold-link class 
+   Set homepage link to bold by default
+*/
+.home-link {
+    font-weight: bold;
+    color: grey;
+}
+
+/*
+home Id
+   Set display to block by default
+*/
+#home {
+    display: block;
+}
+
+/*
+main content Ids
+   Set display to none by default, to hide content other than home
+*/
+#re2, #re3, #re4, #contact, #log-visit {
+    display: none;
+}
+
+/*
+toggle button
+*/
+#toggle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 50%;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    border: 2px solid red;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/*
+submit button
+*/
+#submit {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lavender;
+    font-weight: bold;
+    font-size: large;
+    border: 2px solid rgb(154, 79, 97);
+    margin: 5px;
+}
+
+/*
+form
+*/
+form {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    font-family: "Oswald", Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(214, 179, 211);
+    padding: 1%;
+    border: 2px solid rgb(154, 79, 97);
+    border-radius: 15px;
+}
+
+/*
+input, text type
+*/
+.inputText {
+    border: 1px solid green;
+    border-radius: 5px;
+    margin: 3px 0;
+    display: flex;
+}
+
+/*
+error message font color
+*/
+.errorMsg {
+    color:red;
+}
+
+/*
+success message
+*/
+#success {
+    display: none;
+    font-family: "Oswald", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*
+input with was-validated class: invalid, font color and border change to red
+*/
+input.was-validated:invalid {
+    color: red;
+    border: 1px solid red;
+}
+
+/*
+hide error messages when input stat is valid
+*/
+input:valid ~ div {
+    display: none;
+}
+
+/*
+show error messages when input stat is invalid
+*/
+input:invalid ~ div {
+    display: block;
+}
