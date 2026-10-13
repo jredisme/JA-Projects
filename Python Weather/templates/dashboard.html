@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <div class="header-title">
+        Australian Weather Analytics Dashboard
+    </div>
+    <div class="header-user">
+        Logged in as: {{ session['user'] }}
+    </div>
+</div>
+
+<div class="container">
+    <h2>Weather Dashboard</h2>
+
+    <label for="city"><strong>Select City:</strong></label>
+    <select id="city">
+        {% for city in cities %}
+        <option value="{{ city }}">{{ city }}</option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <button onclick="loadData('rainfall')">Rainfall</button>
+    <button onclick="loadData('temperature')">Temperature</button>
+    <button onclick="loadData('summary')">Summary</button>
+
+    <p id="summary"></p>
+
+    <canvas id="chart" width="800" height="300"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+let currentChart = null;
+let currentCategory = null;
+
+async function loadData(category) {
+    currentCategory = category;
+
+    const city = document.getElementById("city").value;
+    const summaryEl = document.getElementById("summary");
+    const canvas = document.getElementById("chart");
+    const ctx = canvas.getContext("2d");
+
+    try {
+        const response = await fetch(`/data?city=${encodeURIComponent(city)}&category=${encodeURIComponent(category)}`);
+        const data = await response.json();
+
+        if (data.error) {
+            summaryEl.innerText = data.error;
+
+            if (currentChart) {
+                currentChart.destroy();
+                currentChart = null;
+            }
+            return;
+        }
+
+        summaryEl.innerText = data.summary;
+
+        if (currentChart) {
+            currentChart.destroy();
+            currentChart = null;
+        }
+
+        if (!data.values || data.values.length === 0 || data.chart_type === "none") {
+            return;
+        }
+
+        const labels = data.values.map((_, i) => i + 1);
+
+        currentChart = new Chart(ctx, {
+            type: data.chart_type || "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: data.label,
+                    data: data.values,
+                    fill: false,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Record Number"
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: data.label
+                        }
+                    }
+                }
+            }
+        });
+
+    } catch (error) {
+        summaryEl.innerText = "An error occurred while loading dashboard data.";
+
+        if (currentChart) {
+            currentChart.destroy();
+            currentChart = null;
+        }
+    }
+}
+document.getElementById("city").addEventListener("change", function () {
+    if (currentCategory) {
+        loadData(currentCategory);
+    }
+});
+</script>
+
+</body>
+</html>

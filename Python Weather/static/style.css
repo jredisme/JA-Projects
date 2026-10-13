@@ -1,0 +1,28 @@
+/* Header styling */
+.header {
+    background-color: #387fd6;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.header-user {
+    font-size: 16px;
+}
+
+/* General page spacing */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+}

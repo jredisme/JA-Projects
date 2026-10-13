@@ -1,0 +1,16 @@
+//import bootstrap css
+@use './custom.scss';
+
+.navbar {
+    background-color: #2E3596; // same color as logo background
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+}
+
+
+body {
+    padding-top: 8rem; // prevent content from overlapping w/ fixed navbar
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../../assets/images/background.png');
+    background-size: cover;
+}
